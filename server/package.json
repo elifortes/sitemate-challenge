@@ -1,0 +1,23 @@
+{
+  "name": "sitemate-challenge",
+  "version": "1.0.0",
+  "description": "Sitemate coding challenge",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elifortes/sitemate-challenge.git"
+  },
+  "author": "Eliane Fortes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elifortes/sitemate-challenge/issues"
+  },
+  "homepage": "https://github.com/elifortes/sitemate-challenge#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
+}
