@@ -27,7 +27,8 @@ const ApiClient = () => {
       <h2>Create</h2>
       <form onSubmit={(e) => handleSubmit(e, 'create', 'post', createData)}>
         <input type="text" name="id" placeholder="ID" value={createData.id} onChange={(e) => handleChange(e, setCreateData)} />
-        <input type="text" name="item" placeholder="Item" value={createData.item} onChange={(e) => handleChange(e, setCreateData)} />
+        <input type="text" name="title" placeholder="Title" value={createData.title} onChange={(e) => handleChange(e, setCreateData)} />
+        <input type="text" name="description" placeholder="Description" value={createData.description} onChange={(e) => handleChange(e, setCreateData)} />
         <button type="submit">Create</button>
       </form>
 
@@ -40,7 +41,8 @@ const ApiClient = () => {
       <h2>Update</h2>
       <form onSubmit={(e) => handleSubmit(e, `update/${updateData.id}`, 'put', updateData)}>
         <input type="text" name="id" placeholder="ID" value={updateData.id} onChange={(e) => handleChange(e, setUpdateData)} />
-        <input type="text" name="item" placeholder="Item" value={updateData.item} onChange={(e) => handleChange(e, setUpdateData)} />
+        <input type="text" name="title" placeholder="Title" value={updateData.item} onChange={(e) => handleChange(e, setUpdateData)} />
+        <input type="text" name="description" placeholder="Description" value={createData.description} onChange={(e) => handleChange(e, setUpdateData)} />
         <button type="submit">Update</button>
       </form>
 
