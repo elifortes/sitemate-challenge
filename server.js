@@ -6,17 +6,24 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
-let staticData = [];
+let staticData = [{id: 1, item: "Bla bla"}];
 
 app.post('/create', (req, res) => {
   console.log('Create:', req.body);
-  staticData.push(req.body);
+
+  let newRecord = {
+    id: parseInt(req.body.id),
+    item: req.body.item
+  }
+
+  staticData.push(newRecord);
   res.status(201).send({ message: 'Created', data: req.body });
 });
 
 app.get('/read/:id', (req, res) => {
   const id = parseInt(req.params.id);
-  const item = staticData.find(data => data.id === id);
+  const item = staticData.find(data => data.id == id);
+
   if (item) {
     res.send(item);
   } else {
@@ -26,7 +33,8 @@ app.get('/read/:id', (req, res) => {
 
 app.put('/update/:id', (req, res) => {
   const id = parseInt(req.params.id);
-  const index = staticData.findIndex(data => data.id === id);
+  const index = staticData.findIndex(data => data.id == id);
+
   if (index !== -1) {
     staticData[index] = { ...staticData[index], ...req.body };
     console.log('Update:', staticData[index]);
@@ -38,9 +46,11 @@ app.put('/update/:id', (req, res) => {
 
 app.delete('/delete/:id', (req, res) => {
   const id = parseInt(req.params.id);
-  const index = staticData.findIndex(data => data.id === id);
+  const index = staticData.findIndex(data => data.id == id);
+
   if (index !== -1) {
     const deletedData = staticData.splice(index, 1);
+
     console.log('Delete:', deletedData);
     res.send({ message: 'Deleted', data: deletedData });
   } else {
