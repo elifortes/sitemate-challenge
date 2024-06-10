@@ -8,7 +8,7 @@ const cors = require('cors');
 app.use(bodyParser.json());
 app.use(cors());
 
-let staticData = [{id: 1, description: " A Simple Challenge for Sitemate ", title: "Sitemate :)"}];
+let staticData = [{id: 1, title: "Sitemate :)", description: " A Simple Challenge for Sitemate "}];
 
 app.post('/create', (req, res) => {
   console.log('Create:', req.body);
